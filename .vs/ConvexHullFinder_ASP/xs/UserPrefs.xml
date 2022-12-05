@@ -1,10 +1,24 @@
 ﻿<Properties StartupConfiguration="{D1234688-B7D2-4F4B-AF2E-71BDF758C9C8}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/ClientApp/src/components/FindConvexHull.js">
+    <Files>
+      <File FileName="ConvexHullFinder_ASP/Program.cs" Line="1" Column="1" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/index.js" Line="1" Column="1" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/PointsEntryBoard.js" Line="19" Column="50" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FetchData.js" Line="35" Column="17" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FindConvexHull.js" Line="52" Column="6" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ConvexHullFinder_ASP" expanded="True" selected="True">
+          <Node name="ConvexHullFinder_ASP" expanded="True">
             <Node name="ConvexHullFinder_ASP" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="components" expanded="True">
+                    <Node name="FindConvexHull.js" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Pages" expanded="True" />
             </Node>
