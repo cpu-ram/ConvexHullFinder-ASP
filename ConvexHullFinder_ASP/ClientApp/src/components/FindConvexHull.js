@@ -1,33 +1,22 @@
 ﻿import React, { Component } from 'react';
-import {PointsEntryBoard} from '/PointsEntryBoard.js';
 
 export class FindConvexHull extends Component {
     static displayName = FindConvexHull.name;
 
     constructor(props) {
         super(props);
-        this.state = { forecasts: [], loading: true };
+        this.state = {};
     }
 
-    componentDidMount() {
+    useEffect() {
         this.populateWeatherData();
     }
 
-    static renderForecastsTable(forecasts) {
-        return (
-            <PointsEntryBoard> </PointsEntryBoard>
-        );
-    }
-
     render() {
-        let contents = this.state.loading
-            ? <p><em>Loading...</em></p>
-            : FetchData.renderForecastsTable(this.state.forecasts);
+        let contents = 'Hello world'
 
         return (
             <div>
-                <h1 id="tabelLabel" >Weather forecast</h1>
-                <p>This component demonstrates fetching data from the server.</p>
                 {contents}
             </div>
         );
@@ -36,6 +25,6 @@ export class FindConvexHull extends Component {
     async populateWeatherData() {
         const response = await fetch('weatherforecast');
         const data = await response.json();
-        this.setState({ forecasts: data, loading: false });
+        this.setState({});
     }
 }
