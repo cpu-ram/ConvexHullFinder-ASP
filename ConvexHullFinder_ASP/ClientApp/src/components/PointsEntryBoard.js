@@ -1,7 +1,7 @@
-﻿import { cleanup } from '@testing-library/react';
+﻿import React, { Component } from 'react';
 import { useEffect, useState } from 'react';
 
-function DataEntry() {
+function PointsEntryBoard() {
     const [pointsEntered, setPointsEntered] = useState([]);
 
     function PointsDisplayed(props) {
@@ -22,11 +22,6 @@ function DataEntry() {
             y: enteredViewPortCoordinates.y - boardPosition.top
         }
         setPointsEntered([...pointsEntered, boardRelativeClickCoordinates]);
-    }
-
-
-    function FindConvexHull() {
-
     }
 
     return (
@@ -57,4 +52,4 @@ function DataEntry() {
     );
 }
 
-export default DataEntry;
+export default PointsEntryBoard;
