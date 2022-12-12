@@ -33,6 +33,9 @@ export class NavMenu extends Component {
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/find-convex-hull">Find convex hull</NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/test-view">Test View</NavLink>
+                </NavItem>
               </ul>
             </Collapse>
           </Container>

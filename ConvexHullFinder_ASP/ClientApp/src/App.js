@@ -7,6 +7,7 @@ import { Counter } from './components/Counter';
 import { FindConvexHull } from './components/FindConvexHull';
 import { FindConvexHullAlt } from './components/FindConvexHullAlt';
 import PointsEntryBoard from './components/PointsEntryBoard.js';
+import TestView from './components/TestView';
 
 
 import './custom.css'
@@ -23,6 +24,7 @@ export default class App extends Component {
         <Route path='/find-convex-hull' component={FindConvexHull} />
         <Route path='/find-convex-hull-alt' component={FindConvexHullAlt} />
         <Route path='/points-entry-board' component={PointsEntryBoard} />
+        <Route path='/test-view' component={TestView} />
       </Layout>
     );
   }
