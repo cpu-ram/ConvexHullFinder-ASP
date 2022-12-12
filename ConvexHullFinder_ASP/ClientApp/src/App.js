@@ -6,7 +6,6 @@ import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { FindConvexHull } from './components/FindConvexHull';
 import { FindConvexHullAlt } from './components/FindConvexHullAlt';
-
 import PointsEntryBoard from './components/PointsEntryBoard.js';
 
 

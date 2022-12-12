@@ -11,8 +11,8 @@ export class FindConvexHull extends Component {
     render() {
         return (
             <div>
-                <p>Hello world</p>
-                <PointsEntryBoard> </PointsEntryBoard>
+                <PointsEntryBoard>
+                </PointsEntryBoard>
             </div>
         );
     }

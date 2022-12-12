@@ -41,7 +41,6 @@ function PointsEntryBoard() {
 
 
                     {pointsEntered.map((point => <circle cx={point.x} cy={point.y} r='5' />))}
-                    <circle cx='20' cy='20' r='5' />
 
 
                 </svg>
