@@ -16,9 +16,8 @@ export class TestView extends Component {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: null // body data type must match "Content-Type" header
+            body: 4 // body data type must match "Content-Type" header
         });
         const data = await response.json();
         return data; // parses JSON response into native JavaScript objects

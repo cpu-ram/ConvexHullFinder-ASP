@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+
 
 namespace ConvexHullFinder_ASP.Controllers
 {
@@ -17,9 +19,12 @@ namespace ConvexHullFinder_ASP.Controllers
             return 3;
         }
 
-        public int Post()
+        [HttpPost]
+        public int Post([FromBody] int number=0)
         {
-            return 10;
+
+            int entryNumber = 3+number;
+            return entryNumber;
         }
     }
 }
