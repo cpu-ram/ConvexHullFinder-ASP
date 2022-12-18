@@ -16,5 +16,10 @@ namespace ConvexHullFinder_ASP.Controllers
         {
             return 3;
         }
+
+        public int Post()
+        {
+            return 10;
+        }
     }
 }
