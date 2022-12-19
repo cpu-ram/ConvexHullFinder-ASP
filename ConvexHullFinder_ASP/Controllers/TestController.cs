@@ -20,11 +20,9 @@ namespace ConvexHullFinder_ASP.Controllers
         }
 
         [HttpPost]
-        public int Post([FromBody] int number=0)
+        public string Post([FromBody] int entryString)
         {
-
-            int entryNumber = 3+number;
-            return entryNumber;
+            return "hello";
         }
     }
 }

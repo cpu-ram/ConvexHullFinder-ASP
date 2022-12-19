@@ -13,14 +13,16 @@ export class TestView extends Component {
         //const response = await fetch('testcontroller');
 
         const response = await fetch('test', {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: 4 // body data type must match "Content-Type" header
+            body: 3
         });
-        const data = await response.json();
-        return data; // parses JSON response into native JavaScript objects
+        //const data = await response.json();
+        const data = await response;
+        alert(data.value);
+        return data;
     }
 
     render() {
