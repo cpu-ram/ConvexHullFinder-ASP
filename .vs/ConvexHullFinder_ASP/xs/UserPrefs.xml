@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{D1234688-B7D2-4F4B-AF2E-71BDF758C9C8}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js">
     <Files>
-      <File FileName="ConvexHullFinder_ASP/Controllers/TestController.cs" Line="27" Column="32" />
+      <File FileName="ConvexHullFinder_ASP/Controllers/TestController.cs" Line="27" Column="6" />
       <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js" Line="17" Column="23" />
       <File FileName="ConvexHullFinder_ASP/Controllers/WeatherForecastController.cs" />
       <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FetchData.js" />
