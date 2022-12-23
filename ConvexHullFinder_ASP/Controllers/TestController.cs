@@ -13,16 +13,11 @@ namespace ConvexHullFinder_ASP.Controllers
     [Route("[controller]")]
     public class TestController : ControllerBase
     {
-        [HttpGet]
-        public int Get()
-        {
-            return 3;
-        }
 
         [HttpPost]
-        public string Post([FromBody] int entryString)
+        public string Post(string entryString)
         {
-            return "hello";
+            return entryString;
         }
     }
 }

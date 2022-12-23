@@ -6,30 +6,26 @@ export class TestView extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {numbers: 3}
+        this.state = { numbers: 3 }
     }
 
     async FetchStuff() {
-        //const response = await fetch('testcontroller');
-
         const response = await fetch('test', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: 3
+            body: "ohoho"
         });
-        //const data = await response.json();
         const data = await response;
-        alert(data.value);
-        return data;
+        return data.text();
     }
 
     render() {
-        const data = this.FetchStuff().then((value) => console.log(value));
+        const data = this.FetchStuff().then((result) => console.log(result));
         return (
             <div>
-                {this.state.numbers}
+                Hello
             </div>
         );
     }

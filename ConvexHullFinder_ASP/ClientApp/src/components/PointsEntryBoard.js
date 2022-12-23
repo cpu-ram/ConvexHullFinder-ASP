@@ -7,11 +7,10 @@ function PointsEntryBoard() {
     function PointsDisplayed(props) {
         return (
             <>
-                {pointsEntered.map((point => <circle cx={point.x} cy={point.y} r='5' />))}
+                {pointsEntered.map((point, index) => (<circle key={index} cx={point.x} cy={point.y} r='5' />))}
             </>
         )
     }
-
     function handleClick(e) {
         console.log("e", e);
 
@@ -23,30 +22,36 @@ function PointsEntryBoard() {
         }
         setPointsEntered([...pointsEntered, boardRelativeClickCoordinates]);
     }
+    async function submitPointSet() {
+
+        const response = await fetch('test', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: "hello"
+        });
+        const data = await response;
+        const text = await data.text();
+        console.log(text);
+    }
 
     return (
         <>
-            <div style={{
+            <div id="entryBoard" style={{
                 display: "block", boxSizing: "border-box", width: "530px", height: "530px",
                 margin: "0", paddingTop: "15px", paddingRight: "15px",
                 paddingLeft: "15px", paddingBottom: "15px", outline: "1px solid red"
             }}>
-                {pointsEntered.map((point => <circle cx={point.x} cy={point.y} r='5' />))}
-
                 <svg id="board" onClick={handleClick} xmlns="http://www.w3.org/2000/svg" width="500px" height="500px"
                     style={{
                         display: "block", margin: "0",
                         boxSizing: "content-box", padding: "0", outline: "1px solid blue"
                     }}>
-
-
-                    {pointsEntered.map((point => <circle cx={point.x} cy={point.y} r='5' />))}
-
-
+                    <PointsDisplayed></PointsDisplayed>
                 </svg>
             </div>
-
-
+            <button onClick={submitPointSet}>Submit</button>
         </>
     );
 }
