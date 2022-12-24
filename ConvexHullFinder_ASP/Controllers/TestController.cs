@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
+using System.Text;
+using System.IO;
 
 
 namespace ConvexHullFinder_ASP.Controllers
@@ -17,7 +19,9 @@ namespace ConvexHullFinder_ASP.Controllers
         [HttpPost]
         public string Post()
         {
-            return "hello";
+            Task<string> requestReadTask = new StreamReader(Request.Body).ReadToEndAsync();
+            string result = requestReadTask.Result;
+            return result;
         }
     }
 }
