@@ -15,7 +15,7 @@ namespace ConvexHullFinder_ASP.Controllers
     {
 
         [HttpPost]
-        public string Post(string entryString)
+        public string Post()
         {
             return "hello";
         }
