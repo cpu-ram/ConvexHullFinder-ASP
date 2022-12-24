@@ -15,7 +15,7 @@ export class TestView extends Component {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: "ohoho"
+            body: "hi"
         });
         const data = await response;
         return data.text();
