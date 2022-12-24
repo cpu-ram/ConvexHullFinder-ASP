@@ -1,14 +1,8 @@
 ﻿<Properties StartupConfiguration="{D1234688-B7D2-4F4B-AF2E-71BDF758C9C8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/Controllers/TestController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js">
     <Files>
-      <File FileName="ConvexHullFinder_ASP/Controllers/TestController.cs" Line="31" Column="28" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/PointsEntryBoard.js" Line="37" Column="9" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js" Line="18" Column="22" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FetchData.js" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/WeatherForecastController.cs" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/NavMenu.js" Line="32" Column="52" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/Home.js" Line="1" Column="1" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/App.js" Line="19" Column="13" />
+      <File FileName="ConvexHullFinder_ASP/Controllers/TestController.cs" Line="20" Column="32" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js" Line="18" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,11 +11,10 @@
             <Node name="ConvexHullFinder_ASP" expanded="True">
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
-                  <Node name="components" expanded="True" />
+                  <Node name="components" expanded="True">
+                    <Node name="TestView.js" selected="True" />
+                  </Node>
                 </Node>
-              </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="TestController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
