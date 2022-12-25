@@ -19,10 +19,12 @@
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     <None Remove="Controllers\Geometry\" />
+    <None Remove="Controllers\Geometry\Plane\" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\Geometry\" />
+    <Folder Include="Controllers\Geometry\Plane\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

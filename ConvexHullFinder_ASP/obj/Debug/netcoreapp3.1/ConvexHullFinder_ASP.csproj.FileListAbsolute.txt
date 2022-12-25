@@ -49,3 +49,4 @@
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.dll
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.pdb
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.genruntimeconfig.cache
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.csproj.AssemblyReference.cache

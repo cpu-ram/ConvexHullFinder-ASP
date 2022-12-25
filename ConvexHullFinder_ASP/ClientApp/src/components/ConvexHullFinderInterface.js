@@ -65,6 +65,7 @@ function ConvexHullFinderInterface() {
 
     async function findConvexHull() {
         const points = JSON.stringify(pointsEntered);
+        console.log("points entered:" + points);
 
 
         const response = await fetch('findconvexhull', {
@@ -75,8 +76,8 @@ function ConvexHullFinderInterface() {
             body: points
         });
         const data = await response;
-        const text = await data.text();
-        console.log(text);
+        const convexHullJson = await data.text();
+        console.log("Convex hull found:" + convexHullJson);
         setCurrentStatus("displayingConvexHull");
     }
 

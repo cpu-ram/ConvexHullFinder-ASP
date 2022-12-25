@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using System.Text;
 using System.IO;
+using Geometry.Plane;
+using CustomCollections;
 
 
 namespace ConvexHullFinder_ASP.Controllers
@@ -15,13 +17,15 @@ namespace ConvexHullFinder_ASP.Controllers
     [Route("[controller]")]
     public class FindConvexHullController : ControllerBase
     {
-
         [HttpPost]
         public string Post()
         {
             Task<string> requestReadTask = new StreamReader(Request.Body).ReadToEndAsync();
-            string result = requestReadTask.Result;
-            return result;
+            string entryJson = requestReadTask.Result;
+            PointSet pointSet = new PointSet(entryJson);
+            string convexHullJson = pointSet.FindConvexHull();
+
+            return convexHullJson;
         }
     }
 }
