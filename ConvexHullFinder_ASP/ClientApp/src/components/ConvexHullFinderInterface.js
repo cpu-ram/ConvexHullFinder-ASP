@@ -52,7 +52,7 @@ function ConvexHullFinderInterface() {
     }
 
     function handleClick(e) {
-        console.log("e", e);
+        if (currentStatus != "enteringPoints") return;
 
         let enteredViewPortCoordinates = { x: e.clientX, y: e.clientY };
         let boardPosition = document.querySelector('#board').getBoundingClientRect();
@@ -67,7 +67,7 @@ function ConvexHullFinderInterface() {
         const points = JSON.stringify(pointsEntered);
 
 
-        const response = await fetch('test', {
+        const response = await fetch('findconvexhull', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -88,11 +88,12 @@ function ConvexHullFinderInterface() {
                 margin: "0", paddingTop: "15px", paddingRight: "15px",
                 paddingLeft: "15px", paddingBottom: "15px", outline: "1px solid red"
             }}>
-                <svg id="board" onClick={handleClick} xmlns="http://www.w3.org/2000/svg" width="500px" height="500px"
-                    style={{
-                        display: "block", margin: "0",
-                        boxSizing: "content-box", padding: "0", outline: "1px solid blue"
-                    }}>
+                <svg id="board" onClick={handleClick}
+                    xmlns="http://www.w3.org/2000/svg" width="500px" height="500px"
+                        style={{
+                            display: "block", margin: "0",
+                            boxSizing: "content-box", padding: "0", outline: "1px solid blue"
+                        }}>
                     <BoardContents currentStatus={currentStatus} ></BoardContents>
                     
                 </svg>
