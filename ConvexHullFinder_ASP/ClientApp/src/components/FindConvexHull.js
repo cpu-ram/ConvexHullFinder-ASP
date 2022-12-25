@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import PointsEntryBoard from './PointsEntryBoard.js';
+import ConvexHullFinderInterface from './ConvexHullFinderInterface.js';
 
 
 export class FindConvexHull extends Component {
@@ -11,8 +11,8 @@ export class FindConvexHull extends Component {
     render() {
         return (
             <div>
-                <PointsEntryBoard>
-                </PointsEntryBoard>
+                <ConvexHullFinderInterface>
+                </ConvexHullFinderInterface>
             </div>
         );
     }

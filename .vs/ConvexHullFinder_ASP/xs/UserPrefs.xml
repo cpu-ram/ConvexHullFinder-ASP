@@ -1,13 +1,31 @@
 ﻿<Properties StartupConfiguration="{D1234688-B7D2-4F4B-AF2E-71BDF758C9C8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/ClientApp/src/components/PointsEntryBoard.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/Controllers/TestController.cs">
     <Files>
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/PointsEntryBoard.js" Line="7" Column="74" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/TestController.cs" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/App.js" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/PointsEntryBoard.js" Line="68" Column="1" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js" Line="1" Column="1" />
+      <File FileName="ConvexHullFinder_ASP/Controllers/TestController.cs" Line="18" Column="1" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/App.js" Line="26" Column="89" />
       <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/NavMenu.js" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FindConvexHull.js" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FindConvexHull.js" Line="15" Column="44" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ConvexHullFinder_ASP" expanded="True">
+            <Node name="ConvexHullFinder_ASP" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="components" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="Geometry" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.ConvexHullFinder__ASP PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
