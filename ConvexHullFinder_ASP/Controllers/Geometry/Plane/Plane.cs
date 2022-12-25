@@ -27,7 +27,7 @@ namespace Geometry.Plane
                 AddPoint(point);
             }
         }
-        public PointSet(string jsonPoints) : this(System.Text.Json.JsonSerializer.Deserialize<Point[]>(jsonPoints)) // in progress!
+        public PointSet(string jsonPoints) : this(Newtonsoft.Json.JsonConvert.DeserializeObject<Point[]>(jsonPoints)) // in progress!
         {
         }
 
@@ -598,14 +598,14 @@ namespace Geometry.Plane
         decimal yPosition;
         decimal xPosition;
 
-        public decimal A { get => a; set => a = value; }
-        public decimal B { get => b; set => b = value; }
+        public decimal Slope { get => a; set => a = value; }
+        public decimal ConstantTerm { get => b; set => b = value; }
 
         public Line(decimal a, decimal b)
         {
             this.lineType = LineType.linearFunction;
-            this.A = a;
-            this.B = b;
+            this.Slope = a;
+            this.ConstantTerm = b;
         }
         public Line(Point pointOne, Point pointTwo) : this(new Segment(pointOne, pointTwo))
         {
@@ -629,16 +629,16 @@ namespace Geometry.Plane
             {
                 this.lineType = LineType.parallelToXAxis;
                 this.xPosition = point1.x;
-                this.A = 0;
-                this.B = xPosition;
+                this.Slope = 0;
+                this.ConstantTerm = xPosition;
                 return;
             }
             if ((xDifference != 0) && (yDifference != 0))
             {
                 decimal slope = yDifference / xDifference;
                 decimal yInterceptValue = point1.y - (point1.x * slope);
-                this.A = slope;
-                this.B = yInterceptValue;
+                this.Slope = slope;
+                this.ConstantTerm = yInterceptValue;
             }
         }
         private decimal GetValue(decimal x)
@@ -647,14 +647,14 @@ namespace Geometry.Plane
             {
                 throw new Exception();
             }
-            decimal resultValue = (A * x) + B;
+            decimal resultValue = (Slope * x) + ConstantTerm;
             return resultValue;
         }
         private decimal GetInverseValue(decimal y)
         {
-            if (A == 0) throw new Exception();
+            if (Slope == 0) throw new Exception();
 
-            decimal inverseValue = (y - B) / A;
+            decimal inverseValue = (y - ConstantTerm) / Slope;
             return inverseValue;
         }
         private double GetAngleFromXAxis()
@@ -669,7 +669,7 @@ namespace Geometry.Plane
                     result = 0;
                     break;
                 case LineType.linearFunction:
-                    result = Math.Atan((double)A);
+                    result = Math.Atan((double)Slope);
                     break;
                 default:
                     throw new Exception();
@@ -732,6 +732,7 @@ namespace Geometry.Plane
             decimal resultHeightLength = newSection.Length;
             return resultHeightLength;
         }
+
         private Point FindHeightIntersectionPosition
             (Point entryPoint)
         {
@@ -749,13 +750,13 @@ namespace Geometry.Plane
                 {
                     intersectionPosition = new Point(entryPoint.x, line.yPosition);
                 }
-                if (line.lineType == LineType.parallelToXAxis)
+                if (line.lineType == LineType.parallelToYAxis)
                 {
                     intersectionPosition = new Point(line.xPosition, entryPoint.y);
                 }
             }
 
-            decimal lineTangent = Math.Abs(line.A);
+            decimal lineTangent = Math.Abs(line.Slope);
             double lineAngle = (double)
                 Math.Atan(Convert.ToDouble(lineTangent));
             double formulaAngle = (((Math.PI) / 2) - lineAngle);
@@ -765,23 +766,24 @@ namespace Geometry.Plane
                 
             decimal lineValueAtX = line.GetValue(pointX);
             bool pointLiesOnLine;
-            int lineValueAtXToPointYComparison =
+            int lineIsAboveThePoint =
                 lineValueAtX.CompareTo(pointY);
-            if (lineValueAtXToPointYComparison == 0)
+
+            if (lineIsAboveThePoint == 0)
             {
                 pointLiesOnLine = true;
             }
             else pointLiesOnLine = false;
-
             if (pointLiesOnLine)
             {
                 return entryPoint;
             }
-            switch (lineValueAtXToPointYComparison)
+
+            switch (lineIsAboveThePoint)
             {
                 case 1:
                     c2 = 1;
-                    switch (A.CompareTo(0))
+                    switch (Slope.CompareTo(0))
                     {
                         case 1:
                             c1 = -1;
@@ -795,7 +797,7 @@ namespace Geometry.Plane
                     break;
                 case -1:
                     c2 = -1;
-                    switch (A.CompareTo(0))
+                    switch (Slope.CompareTo(0))
                     {
                         case 1:
                             c1 = 1;
@@ -809,9 +811,10 @@ namespace Geometry.Plane
                 default:
                     throw new Exception();
             }
+
             decimal yDifference =
                 ((
-                ((lineTangent * pointX) - pointY + this.B)
+                ((lineTangent * pointX) - pointY + this.ConstantTerm)
                 /
                 (c2 - lineTangent * c1 * (decimal)(1 / Math.Tan(formulaAngle)))
                 ));
@@ -823,6 +826,7 @@ namespace Geometry.Plane
             intersectionPosition = new Point(resultX, resultY);
             return intersectionPosition;
         }
+
         public Point FindIntersection(Line referenceLine)
         {
             bool thisLineIsParallelToYAxis = this.lineType == LineType.parallelToYAxis;
@@ -867,20 +871,20 @@ namespace Geometry.Plane
             }
             else
             {
-                if (this.B == referenceLine.B)
+                if (this.ConstantTerm == referenceLine.ConstantTerm)
                 {
-                    intersectionPointY = this.B;
+                    intersectionPointY = this.ConstantTerm;
                     intersectionPoint = new Point(0, intersectionPointY);
                 }
                 else
                 {
-                    if (this.A == referenceLine.A)
+                    if (this.Slope == referenceLine.Slope)
                     {
                         intersectionPoint = null;
                     }
                     else
                     {
-                        intersectionPointX = -((this.B - referenceLine.B) / (this.A - referenceLine.A));
+                        intersectionPointX = -((this.ConstantTerm - referenceLine.ConstantTerm) / (this.Slope - referenceLine.Slope));
                         intersectionPointY = this.GetValue(intersectionPointX);
                         intersectionPoint = new Point(intersectionPointX, intersectionPointY);
                     }
@@ -935,7 +939,7 @@ namespace Geometry.Plane
             if (this.lineType != LineType.parallelToYAxis
                     && referenceLine.lineType != LineType.parallelToYAxis)
             {
-                if (this.A == referenceLine.A && this.B == referenceLine.B)
+                if (this.Slope == referenceLine.Slope && this.ConstantTerm == referenceLine.ConstantTerm)
                 {
                     result = true;
                 }
@@ -959,7 +963,7 @@ namespace Geometry.Plane
         }
         public override int GetHashCode()
         {
-            int resultHashCode = (A.GetHashCode() + B).GetHashCode();
+            int resultHashCode = (Slope.GetHashCode() + ConstantTerm).GetHashCode();
             return resultHashCode;
         }
     }

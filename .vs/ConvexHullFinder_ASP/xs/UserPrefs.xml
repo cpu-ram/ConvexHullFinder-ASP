@@ -1,19 +1,12 @@
 ﻿<Properties StartupConfiguration="{D1234688-B7D2-4F4B-AF2E-71BDF758C9C8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/ClientApp/src/components/ConvexHullFinderInterface.js">
     <Files>
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/ConvexHullFinderInterface.js" Line="80" Column="44" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/TestController.cs" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/TestView.js" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/App.js" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/NavMenu.js" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FindConvexHull.js" />
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/FetchData.js" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/WeatherForecastController.cs" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/ConvexHullFinderInterface.js" Line="59" Column="34" />
       <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" Line="30" Column="1" />
+      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.ConvexHullFinder__ASP PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.ConvexHullFinder__ASP PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 function ConvexHullFinderInterface() {
     const [pointsEntered, setPointsEntered] = useState([]);
+    const [stash, setStash] = useState([]);
     const [convexHull, setConvexHull] = useState([]);
     const [currentStatus, setCurrentStatus] = useState("enteringPoints");
 
@@ -14,32 +15,49 @@ function ConvexHullFinderInterface() {
         )
     }
     function ConvexHull(props) {
-        return <div></div>;
+        const polygonPointsString =
+            convexHull.map((point) => point.x + "," + point.y + " ")
+                .reduce((a,b)=>a.concat(b));
+        console.log(polygonPointsString);
+        return (
+            <>
+                <polygon points=
+                    {polygonPointsString}
+                        style={{fill: "none", stroke:"green", strokeWidth:1}} />
+            </>
+        )
     }
     function BoardContents(props) {
         let currentStatus = props.currentStatus;
-        if (currentStatus = "enteringPoints") {
-            
-            return <><PointsEntered></PointsEntered></>;
+        if (currentStatus == "enteringPoints") {
+            return (
+                <>
+                    <PointsEntered></PointsEntered>
+                </>
+            );
         }
-        else if (currentStatus = "displayingConvexHull") {
+        else if (currentStatus == "displayingConvexHull") {
             return (
                 <>
                     <PointsEntered></PointsEntered>
                     <ConvexHull></ConvexHull>
                 </>
-            )
+            );
         }
         else throw new DOMException();
+
     }
     function Buttons(props) {
         let currentStatus = props.currentStatus;
-
+        let stash = props.stash;
             return (
                 <>
                     {currentStatus == "enteringPoints" &&
                         <button onClick={findConvexHull}>Submit</button>}
                     <button onClick={clearBoard}>Clear</button>
+                    <button onClick={stashUp}>Stash points</button>
+                    {stash.length>0 &&
+                        <button onClick={popStash}>Pop stash</button>}
                 </>
             )
         
@@ -49,6 +67,16 @@ function ConvexHullFinderInterface() {
         setPointsEntered([]);
         setConvexHull([]);
         setCurrentStatus("enteringPoints");
+    }
+    function stashUp() {
+        setStash(pointsEntered);
+    }
+    function popStash() {
+        if (stash == []) {
+            throw new DOMException();
+        }
+        setPointsEntered(stash);
+        setStash([]);
     }
 
     function handleClick(e) {
@@ -77,6 +105,9 @@ function ConvexHullFinderInterface() {
         });
         const data = await response;
         const convexHullJson = await data.text();
+        const convexHullReturned = JSON.parse(convexHullJson);
+        setConvexHull(convexHullReturned);
+
         console.log("Convex hull found:" + convexHullJson);
         setCurrentStatus("displayingConvexHull");
     }
@@ -100,7 +131,7 @@ function ConvexHullFinderInterface() {
                 </svg>
             </div>
 
-            <Buttons currentStatus={currentStatus}></Buttons>
+            <Buttons stash={stash} currentStatus={currentStatus}></Buttons>
 
         </>
     );
