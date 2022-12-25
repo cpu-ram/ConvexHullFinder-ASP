@@ -1,8 +1,10 @@
 ﻿import React, { Component } from 'react';
 import { useEffect, useState } from 'react';
 
-function PointsEntryBoard() {
+function Board() {
     const [pointsEntered, setPointsEntered] = useState([]);
+    const [convexHull, setConvexHull] = useState([]);
+    const [currentStatus, setCurrentStatus] = useState("enteringPoints");
 
     function PointsDisplayed(props) {
         return (
@@ -22,19 +24,22 @@ function PointsEntryBoard() {
         }
         setPointsEntered([...pointsEntered, boardRelativeClickCoordinates]);
     }
-    async function submitPointSet() {
+
+    async function findConvexHull() {
+        const points = JSON.stringify(pointsEntered);
 
         const response = await fetch('test', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: "hello"
+            body: points
         });
         const data = await response;
         const text = await data.text();
         console.log(text);
     }
+
 
     return (
         <>
@@ -51,9 +56,9 @@ function PointsEntryBoard() {
                     <PointsDisplayed></PointsDisplayed>
                 </svg>
             </div>
-            <button onClick={submitPointSet}>Submit</button>
+            <button onClick={findConvexHull}>Submit</button>
         </>
     );
 }
 
-export default PointsEntryBoard;
+export default Board;
