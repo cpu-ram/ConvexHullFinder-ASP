@@ -1204,7 +1204,7 @@ namespace Geometry.Plane
                 currentStepRotationAngle = entryPoint.GetRelativeRotationAngle(tempStep);
                 totalRotation += currentStepRotationAngle;
             }
-            if (Math.Abs(totalRotation) >= Math.PI * 2)
+            if (Math.Abs(totalRotation) > Math.PI * 1.75)
             {
                 return true;
             }

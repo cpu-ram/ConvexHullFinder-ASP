@@ -1,0 +1,5 @@
+intersectionsNumber1	1	int
+intersectionsNumber2	1	int
+pathFromSide1	{{{"x":96,"y":8},{"x":109,"y":297}}}	Geometry.Plane.Segment
+pathFromSide2	{{{"x":109,"y":297},{"x":489,"y":336}}}	Geometry.Plane.Segment
+polygon	{[{"x":379,"y":493},{"x":449,"y":445},{"x":489,"y":336},{"x":96,"y":8},{"x":3,"y":211}]}	Geometry.Plane.Polygon
