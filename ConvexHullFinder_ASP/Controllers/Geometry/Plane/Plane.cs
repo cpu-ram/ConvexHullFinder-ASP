@@ -166,7 +166,7 @@ namespace Geometry.Plane
         private decimal xCoordinate;
         private decimal yCoordinate;
 
-        [JsonConstructor]
+        [Newtonsoft.Json.JsonConstructorAttribute]
         public Point(decimal x, decimal y)
         {
             this.x = Math.Round(x,10);
@@ -441,6 +441,39 @@ namespace Geometry.Plane
                 default:
                     throw new Exception();
             }
+        }
+        public Segment(string jsonString) // I need to figure out how to refactor this and other things like this!
+        {
+            Point[] points = new Point[2];
+            try
+            {
+                points = Newtonsoft.Json.JsonConvert.DeserializeObject<Point[]>(jsonString);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            Point pointOne = points[0];
+            Point pointTwo = points[1];
+            switch (pointOne.CompareTo(pointTwo))
+            {
+                case 1:
+                    startingPoint = pointTwo;
+                    endPoint = pointOne;
+                    break;
+                case 0:
+                    startingPoint = pointOne;
+                    endPoint = pointTwo;
+                    break;
+                case -1:
+                    startingPoint = pointOne;
+                    endPoint = pointTwo;
+                    break;
+                default:
+                    throw new Exception();
+            }
+
         }
         public Point StartingPoint
         {
@@ -805,7 +838,11 @@ namespace Geometry.Plane
                     if (point.x == this.xPosition) return true;
                     else return false;
                 case LineType.linearFunction:
-                    if (this.GetValue(point.x) == point.y)
+                    decimal valueOfThisLine = this.GetValue(point.x);
+                    decimal pointY = point.y;
+                    decimal absoluteDifference = Math.Abs(valueOfThisLine - pointY);
+
+                    if (absoluteDifference<Convert.ToDecimal(0.1))
                     {
                         return true;
                     }
@@ -1042,6 +1079,24 @@ namespace Geometry.Plane
             if (!InputIsValid(points))
             {
                 throw new ArgumentException();
+            }
+            vertices = new DLList<Point>();
+            for (int i = 0; i < points.Length; i++)
+            {
+                Point currentElement = points[i];
+                vertices.AddLast(currentElement);
+            }
+        }
+        public Polygon(string jsonString)
+        {
+            Point[] points;
+            try
+            {
+                points = Newtonsoft.Json.JsonConvert.DeserializeObject<Point[]>(jsonString);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
             vertices = new DLList<Point>();
             for (int i = 0; i < points.Length; i++)

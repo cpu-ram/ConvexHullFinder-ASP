@@ -9,6 +9,8 @@ function ConvexHullFinderInterface() {
     const [polygons, setPolygons] = useState([[]]);
     const [mousePos, setMousePos] = useState({});
 
+    const [extraPolygon, setExtraPolygon] = useState([]);
+
     function PointsEntered(props) {
         return (
             <>
@@ -75,6 +77,7 @@ function ConvexHullFinderInterface() {
     function Buttons(props) {
         let currentStatus = props.currentStatus;
         let stash = props.stash;
+        let entryData = props.entryData;
             return (
                 <>
                     {currentStatus == "enteringPoints" &&
@@ -83,9 +86,22 @@ function ConvexHullFinderInterface() {
                     <button onClick={stashUp}>Stash points</button>
                     {stash.length>0 &&
                         <button onClick={popStash}>Pop stash</button>}
+                    <br /><br />
+                    
                 </>
             )
         
+    }
+    function ExtraPolygon(props) {
+        let bool = false;
+        let pointsJson = "[{\"x\":379,\"y\":493},{\"x\":449,\"y\":445},{\"x\":489,\"y\":336},{\"x\":96,\"y\":8},{\"x\":3,\"y\":211}]";
+
+        if (bool) {
+            let points = JSON.parse(pointsJson);
+            let extraPolygon = new Polygon(points);
+            return extraPolygon;
+        }
+        else return " ";
     }
 
     function clearBoard() {
@@ -104,7 +120,7 @@ function ConvexHullFinderInterface() {
         setStash([]);
     }
 
-    function handleClick(e) {
+    function handleBoardClick(e) {
         if (currentStatus != "enteringPoints") return;
 
         let enteredViewPortCoordinates = { x: e.clientX, y: e.clientY };
@@ -115,6 +131,7 @@ function ConvexHullFinderInterface() {
         }
         setPointsEntered([...pointsEntered, boardRelativeClickCoordinates]);
     }
+    
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -167,14 +184,14 @@ function ConvexHullFinderInterface() {
                 margin: "0", paddingTop: "15px", paddingRight: "15px",
                 paddingLeft: "15px", paddingBottom: "15px", outline: "1px solid red"
             }}>
-                <svg id="board" onClick={handleClick}
+                <svg id="board" onClick={handleBoardClick}
                     xmlns="http://www.w3.org/2000/svg" width="500px" height="500px"
                         style={{
                             display: "block", margin: "0",
                             boxSizing: "content-box", padding: "0", outline: "1px solid blue"
                         }}>
                     <BoardContents currentStatus={currentStatus} ></BoardContents>
-                    
+                    <ExtraPolygon></ExtraPolygon>
                 </svg>
             </div>
             <div>

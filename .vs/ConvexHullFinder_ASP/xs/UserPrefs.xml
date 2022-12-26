@@ -2,38 +2,15 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs">
     <Files>
       <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/ConvexHullFinderInterface.js" Line="95" Column="6" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" Line="119" Column="1" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" Line="1206" Column="14" />
+      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" Line="119" Column="30" />
+      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" />
       <File FileName="ConvexHullFinder_ASP/Controllers/FindConvexHullController.cs" />
       <File FileName="ConvexHullFinder_ASP/Program.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ConvexHullFinder_ASP" expanded="True">
-            <Node name="ConvexHullFinder_ASP" expanded="True">
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True" />
-              </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="Geometry" expanded="True">
-                  <Node name="Plane" expanded="True">
-                    <Node name="FindConvexHull.cs" selected="True" />
-                    <Node name="Plane.cs" selected="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>intersectionsNumber1</Value>
-          <Value>intersectionsNumber2</Value>
-          <Value>pathFromSide1</Value>
-          <Value>pathFromSide2</Value>
-          <Value>polygon</Value>
+          <Node name="ConvexHullFinder_ASP" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
