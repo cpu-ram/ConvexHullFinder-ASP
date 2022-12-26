@@ -1,11 +1,3 @@
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.GeneratedMSBuildEditorConfig.editorconfig
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.AssemblyInfoInputs.cache
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.AssemblyInfo.cs
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.csproj.CoreCompileInputs.cache
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.MvcApplicationPartsAssemblyInfo.cs
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.MvcApplicationPartsAssemblyInfo.cache
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.RazorAssemblyInfo.cache
-/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.RazorAssemblyInfo.cs
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/bin/Debug/netcoreapp3.1/appsettings.json
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/bin/Debug/netcoreapp3.1/ConvexHullFinder_ASP.deps.json
@@ -34,6 +26,14 @@
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.dll
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.GeneratedMSBuildEditorConfig.editorconfig
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.AssemblyInfoInputs.cache
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.AssemblyInfo.cs
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.csproj.CoreCompileInputs.cache
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.MvcApplicationPartsAssemblyInfo.cs
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.MvcApplicationPartsAssemblyInfo.cache
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.RazorAssemblyInfo.cache
+/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/ConvexHullFinder_ASP.RazorAssemblyInfo.cs
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/staticwebassets/ConvexHullFinder_ASP.StaticWebAssets.Manifest.cache
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/staticwebassets/ConvexHullFinder_ASP.StaticWebAssets.xml
 /Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/obj/Debug/netcoreapp3.1/scopedcss/bundle/ConvexHullFinder_ASP.styles.css

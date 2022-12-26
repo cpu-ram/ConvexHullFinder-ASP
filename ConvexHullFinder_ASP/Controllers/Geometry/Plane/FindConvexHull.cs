@@ -20,18 +20,18 @@ namespace Geometry.Plane
             extremePointsArray[2] = minY;
             extremePointsArray[3] = minX;
 
-            HashSet<Point> pointsSet = new HashSet<Point>();
+            HashSet<Point> extremePointsSet = new HashSet<Point>();
             foreach (Point point in extremePointsArray)
             {
-                if (!pointsSet.Contains(point))
+                if (!extremePointsSet.Contains(point))
                 {
-                    pointsSet.Add(point);
+                    extremePointsSet.Add(point);
                 }
             }
-            int pointsSetCount = pointsSet.Count;
+            int pointsSetCount = extremePointsSet.Count;
             Point[] uniqueExtremePointsArray = new Point[pointsSetCount];
             int counter = 0;
-            foreach (Point point in pointsSet)
+            foreach (Point point in extremePointsSet)
             {
                 uniqueExtremePointsArray[counter] = point;
                 counter++;

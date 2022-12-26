@@ -6,6 +6,8 @@ function ConvexHullFinderInterface() {
     const [stash, setStash] = useState([]);
     const [convexHull, setConvexHull] = useState([]);
     const [currentStatus, setCurrentStatus] = useState("enteringPoints");
+    const [polygons, setPolygons] = useState([[]]);
+    const [mousePos, setMousePos] = useState({});
 
     function PointsEntered(props) {
         return (
@@ -27,6 +29,29 @@ function ConvexHullFinderInterface() {
             </>
         )
     }
+    function Polygons(props) {
+        const result = polygons.map((polygon) => Polygon(polygon)).reduce((a, b) => a.concat(b));
+        return result;
+    }
+    function Polygon(points) {
+        const polygonPointsString =
+            points.map((point) => point.x + "," + point.y + " ")
+                .reduce((a, b) => a.concat(b));
+        console.log(polygonPointsString);
+        return (
+            <>
+                <polygon points=
+                    {polygonPointsString}
+                    style={{ fill: "none", stroke: "green", strokeWidth: 1 }} />
+            </>
+        )
+    }
+    function CreatePolygon(jsonString) {
+        const pointsArray = JSON.parse(jsonString);
+        const polygon = Polygon(pointsArray);
+        return polygon;
+    }
+
     function BoardContents(props) {
         let currentStatus = props.currentStatus;
         if (currentStatus == "enteringPoints") {
@@ -91,6 +116,28 @@ function ConvexHullFinderInterface() {
         setPointsEntered([...pointsEntered, boardRelativeClickCoordinates]);
     }
 
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            let enteredViewPortCoordinates = { x: e.clientX, y: e.clientY };
+            let boardPosition = document.querySelector('#board').getBoundingClientRect();
+            let boardRelativeMouseCoordinates = {
+                x: enteredViewPortCoordinates.x - boardPosition.left,
+                y: enteredViewPortCoordinates.y - boardPosition.top
+            }
+
+            setMousePos({ x: boardRelativeMouseCoordinates.x, y: boardRelativeMouseCoordinates.y });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener(
+                'mousemove',
+                handleMouseMove
+            );
+        };
+    }, []);
+
     async function findConvexHull() {
         const points = JSON.stringify(pointsEntered);
         console.log("points entered:" + points);
@@ -130,7 +177,12 @@ function ConvexHullFinderInterface() {
                     
                 </svg>
             </div>
-
+            <div>
+                The mouse is at position{' '}
+                <b>
+                    ({mousePos.x}, {mousePos.y})
+                </b>
+            </div>
             <Buttons stash={stash} currentStatus={currentStatus}></Buttons>
 
         </>

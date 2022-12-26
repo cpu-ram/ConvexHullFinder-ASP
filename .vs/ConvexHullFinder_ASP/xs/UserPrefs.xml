@@ -1,30 +1,22 @@
 ﻿<Properties StartupConfiguration="{D1234688-B7D2-4F4B-AF2E-71BDF758C9C8}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs">
     <Files>
-      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/ConvexHullFinderInterface.js" Line="59" Column="39" />
+      <File FileName="ConvexHullFinder_ASP/ClientApp/src/components/ConvexHullFinderInterface.js" Line="95" Column="22" />
       <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" />
-      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" Line="599" Column="1" />
+      <File FileName="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" Line="127" Column="68" />
       <File FileName="ConvexHullFinder_ASP/Controllers/FindConvexHullController.cs" />
       <File FileName="ConvexHullFinder_ASP/Program.cs" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>slopeIsPositive</Value>
-          <Value>line</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.ConvexHullFinder__ASP PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" line="603" column="9" />
-      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" line="613" column="9" />
-      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" line="623" column="13" />
-      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" line="629" column="13" />
+      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" line="41" column="13" />
+      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/FindConvexHull.cs" line="47" column="13" />
+      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" line="101" column="9" />
+      <Breakpoint file="/Users/petrstepanenko/Projects/ConvexHullFinder_ASP/ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" relfile="ConvexHullFinder_ASP/Controllers/Geometry/Plane/Plane.cs" line="121" column="9" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

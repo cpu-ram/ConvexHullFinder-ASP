@@ -22,7 +22,9 @@ namespace Geometry.Plane
             this.xSet = new SortedSet<decimal>();
             this.ySet = new SortedSet<decimal>();
 
-            foreach(Point point in points)
+            HashSet<Point> pointsSet = new HashSet<Point>(points);
+
+            foreach(Point point in pointsSet)
             {
                 AddPoint(point);
             }
@@ -118,11 +120,11 @@ namespace Geometry.Plane
         public Point GetMinYPoint()
         {
             decimal minY = ySet.Min;
-            SortedSet<decimal> maxYValues = yToXDictionary[minY];
-            IEnumerator<decimal> enumerator = maxYValues.GetEnumerator();
+            SortedSet<decimal> minYValues = yToXDictionary[minY];
+            IEnumerator<decimal> enumerator = minYValues.GetEnumerator();
             enumerator.MoveNext();
             decimal firstAvailableValue = enumerator.Current;
-            Point resultPoint = new Point(minY, firstAvailableValue);
+            Point resultPoint = new Point(firstAvailableValue, minY);
             return resultPoint;
         }
         public Point GetMinXPoint()
@@ -1131,9 +1133,9 @@ namespace Geometry.Plane
                 }
             }
         }
-        public Tuple<Point, Point> GetNeighbors(Point entry)
+        public Tuple<Point, Point> GetNeighbors(Point entryPoint)
         {
-            if (!this.ContainsPoint(entry))
+            if (!this.ContainsPoint(entryPoint))
             {
                 throw new ArgumentException("Entry value" +
                     "was not found.");
@@ -1146,7 +1148,7 @@ namespace Geometry.Plane
             Point currentValue = currentNode.Value;
             while (currentNode != null)
             {
-                if (currentValue.Equals(entry))
+                if (currentValue.Equals(entryPoint))
                 {
                     if (currentNode == vertices.First)
                     {
@@ -1171,15 +1173,15 @@ namespace Geometry.Plane
             }
             throw new Exception();
         }
-        public bool ContainsPoint(Point query)
+        public bool ContainsPoint(Point entryPoint)
         {
             foreach (Point point in vertices)
             {
-                if (point.Equals(query)) return true;
+                if (point.Equals(entryPoint)) return true;
             }
             return false;
         }
-        public bool SurroundsPoint(Point query)
+        public bool SurroundsPoint(Point entryPoint)
         {
             double totalRotation = 0;
             Point[] points = this.GetPoints();
@@ -1199,10 +1201,10 @@ namespace Geometry.Plane
                 }
                 else throw new Exception();
                 Step tempStep = new Step(points[i], points[nextPointId]);
-                currentStepRotationAngle = query.GetRelativeRotationAngle(tempStep);
+                currentStepRotationAngle = entryPoint.GetRelativeRotationAngle(tempStep);
                 totalRotation += currentStepRotationAngle;
             }
-            if (Math.Abs(totalRotation) == Math.PI * 2)
+            if (Math.Abs(totalRotation) >= Math.PI * 2)
             {
                 return true;
             }
