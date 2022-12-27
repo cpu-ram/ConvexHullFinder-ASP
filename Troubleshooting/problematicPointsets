@@ -1,0 +1,4 @@
+FindIntersectionsNumber
+
+	pathFromSide1	{{{"x":1,"y":156},{"x":1,"y":329}}}	Geometry.Plane.Segment
+  polygon	{[{"x":255,"y":482},{"x":430,"y":78},{"x":1,"y":156}]}	Geometry.Plane.Polygon

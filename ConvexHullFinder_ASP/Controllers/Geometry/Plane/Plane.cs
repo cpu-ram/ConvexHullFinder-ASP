@@ -657,13 +657,13 @@ namespace Geometry.Plane
             if (xDifference == 0)
             {
                 this.type = LineType.parallelToYAxis;
-                this.yPosition = point1.y;
+                this.xPosition = point1.x;
                 return;
             }
             if (yDifference == 0)
             {
                 this.type = LineType.parallelToXAxis;
-                this.xPosition = point1.x;
+                this.yPosition = point1.y;
                 this.Slope = 0;
                 this.ConstantTerm = xPosition;
                 return;
